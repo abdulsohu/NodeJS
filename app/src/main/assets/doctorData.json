@@ -1,0 +1,18 @@
+[
+  {
+    "username": "fad345",
+    "password": "40842004",
+    "email": "e3@gmail.com",
+    "speciality": "primary care",
+    "telephone": "308-453-0199",
+    "rate": "78"
+  },
+  {
+    "username": "fax345",
+    "password": "40842004",
+    "email": "faxc@gmail.com",
+    "speciality": "primary care",
+    "telephone": "323-433-0139",
+    "rate": "32"
+  }
+]

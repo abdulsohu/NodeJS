@@ -1,0 +1,19 @@
+{
+  "patients":
+  [
+  {
+    "username": "Max",
+    "password": "24984",
+    "email": "max@gmail.com",
+    "telephone": "782-453-2049",
+    "fullname": "max waters"
+  },
+  {
+    "username": "Marc",
+    "password": "24984er34",
+    "email": "marc@gmail.com",
+    "telephone": "782-353-1349",
+    "fullname": "Marc wef3s"
+  }
+]
+}
