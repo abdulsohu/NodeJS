@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppoitmentsActivity"></activity>
+        <activity android:name=".AppointmentsActivity"></activity>
         <activity android:name=".InventoryActivity" />
         <activity android:name=".PatientHomepageActivity" />
         <activity android:name=".DoctorHomepageActivity" />
@@ -24,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

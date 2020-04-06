@@ -69,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
                 if(userType.equals("Doctor") ){
                   if(checkCredentials(usernameInput.getText().toString(),
                           passwordInput.getText().toString(),"doctorData.json")){
-                      startActivity(new Intent(MainActivity.this,
-                              DoctorHomepageActivity.class));
+                      Intent i = new Intent(MainActivity.this, DoctorHomepageActivity.class);
+                      i.putExtra("Doc", usernameInput.getText().toString());
+                      //startActivity(new Intent(MainActivity.this,
+                      //        DoctorHomepageActivity.class));
+                      startActivity(i);
                   }
                   else{
                       wrongCredentials();
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                    if( checkCredentials(usernameInput.getText().toString(),
                             passwordInput.getText().toString(),"patientData.json")){
+
                        startActivity(new Intent(MainActivity.this,
                                PatientHomepageActivity.class));
                    }
