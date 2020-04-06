@@ -66,6 +66,7 @@ public class doctorActivity extends AppCompatActivity {
                     //e.printStackTrace();
 
                 }
+
                 startActivity(new Intent(doctorActivity.this,DoctorHomepageActivity.class));
 
 
