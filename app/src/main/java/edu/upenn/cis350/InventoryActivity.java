@@ -26,6 +26,8 @@ public class InventoryActivity extends AppCompatActivity {
         EditText quantity = findViewById(R.id.quantity);
         DatePicker date = findViewById(R.id.datePicker1);
 
+        //How do you know my changes you freaky jawn
+
         String itemName = name.getText().toString();
         Long qty = Long.parseLong(quantity.getText().toString());
     }
