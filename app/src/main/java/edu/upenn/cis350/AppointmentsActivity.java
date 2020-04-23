@@ -1,6 +1,12 @@
 package edu.upenn.cis350;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.pm.PackageInstaller;
+import android.media.MediaCas;
 import android.os.Bundle;
+import android.os.Message;
+import android.se.omapi.Session;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,17 +15,25 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.net.PasswordAuthentication;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class AppointmentsActivity extends AppCompatActivity {
     Map<String, String> appointments;
 
+    MediaCas.Session session = null;
+    ProgressDialog progressDialog = null;
+    Context context = null;
+    String rec, subject, textMessage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context = this;
         appointments = new HashMap<String, String>();
         appointments.put("jack", "pending");
         appointments.put("penny", "accepted");
@@ -134,34 +148,25 @@ public class AppointmentsActivity extends AppCompatActivity {
     }
 
 
-
-
-//    public String loadJSONFromAsset(String filename) {
-//        String json = null;
-//        try {
-//            InputStream is = this.getAssets().open(filename);
-//            int size = is.available();
-//            byte[] buffer = new byte[size];
-//            is.read(buffer);
-//            is.close();
-//            json = new String(buffer, "UTF-8");
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//            return null;
-//        }
-//        return json;
-//    }
-
     public void onAcceptButtonClick(View v) {
-        //Intent i = new Intent(this, InventoryActivity.class);
         Spinner spinner = (Spinner) findViewById(R.id.pending_spinner);
         String level = spinner.getSelectedItem().toString();
         if (!level.equals(" ")) {
             appointments.put(level, "accepted");
             updateSpinner();
         }
-        //i.putExtra("MESSAGE", "HI");
-        //startActivityForResult(i, 1);
+
+        rec = "sohu@sas.upenn.edu";
+        subject = "Appointment confirmed with:" +  "abdul" + ", for:" + "22 April, 2020";
+        textMessage = "This is a FANYHEALTH confirmation of appointment with" + "abdul";
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.socketFactory.port", "465");//TLS
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
     }
 
     public void onRejectButtonClick(View v) {
@@ -184,5 +189,7 @@ public class AppointmentsActivity extends AppCompatActivity {
 
 
     }
+
+
 
 }

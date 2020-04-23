@@ -3,8 +3,10 @@
     package="edu.upenn.cis350">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,6 +16,8 @@
         <activity android:name=".AppointmentsActivity"></activity>
         <activity android:name=".AppoitmentsActivity"></activity>
         <activity android:name=".InventoryActivity" />
+        <activity android:name=".AddItem" />
+        <activity android:name=".EditItems" />
         <activity android:name=".PatientHomepageActivity" />
         <activity android:name=".DoctorHomepageActivity" />
         <activity android:name=".doctorActivity" />
