@@ -10,7 +10,7 @@ const mail = require('./api/routes/send-mail.js');
 const todo = require('./api/routes/todos.js');
 
 mongoose.connect(
-    'mongodb+srv://nabeel:nabeel@fanyhealth-mek3v.mongodb.net/test?retryWrites=true&w=majority',
+    env.MONGODB_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
